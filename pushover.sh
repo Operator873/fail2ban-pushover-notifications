@@ -28,4 +28,9 @@ else
 fi
 
 ### SEND TO PUSHOVER API ###
-curl -s --data token="$PUSHOVER_API_TOKEN" --data user="$PUSHOVER_USER_TOKEN" --data-urlencode title="$PUSHOVER_TITLE" --data priority=$PUSHOVER_PRIORITY --data-urlencode message="$PUSHOVER_MESSAGE" $PUSHOVER_URL > /dev/null 2>&1 &
+curl -s --data token="$PUSHOVER_API_TOKEN" \
+--form-string user="$PUSHOVER_USER_TOKEN" \
+--form-string title="$PUSHOVER_TITLE" \
+--form-string priority=$PUSHOVER_PRIORITY \
+--form-string message="$PUSHOVER_MESSAGE" \
+$PUSHOVER_URL > /dev/null 2>&1 &
