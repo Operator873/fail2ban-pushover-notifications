@@ -27,3 +27,5 @@ action = %(action_)s
 It's worth saying that the Pushover priority levels probably should be changed to match what you want.
 
 As is, thanks to overseas activity, there is a lot of fraudulent ssh attempts happening everywhere now. So the Pushover notification can become quite noisy at times. If such is the case, to avoid alert fatigue, I'd open `pushover.sh` and change [Line 17](https://github.com/Operator873/fail2ban-pushover-notifications/blob/da49fe787770c4ba08ca9cdda4efa9b89cc86c1d/pushover.sh#L17) to `PUSHOVER_PRIORITY=-1` and [Line 22](https://github.com/Operator873/fail2ban-pushover-notifications/blob/da49fe787770c4ba08ca9cdda4efa9b89cc86c1d/pushover.sh#L22) to `PUSHOVER_PRIORITY=-2` to lower the noise level.
+
+In the future, I may try to add the ability to specify different priorities based on jail configuration.
